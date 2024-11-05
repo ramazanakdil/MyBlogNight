@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="ArticleDtos\" />
+    <Folder Include="CategoryDtos\" />
+    <Folder Include="CommentDtos\" />
+    <Folder Include="ContactDtos\" />
+    <Folder Include="SocialMediaDtos\" />
+    <Folder Include="NewsletterDtos\" />
+  </ItemGroup>
+
+</Project>
