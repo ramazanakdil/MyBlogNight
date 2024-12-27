@@ -11,13 +11,8 @@ Bu sistem, blog yönetimi süreçlerini kolaylaştırmak, kullanıcıların içe
 
 ## 🚀 Proje Özellikleri
 
-- **N Katmanlı Mimari**: 
-  - Katmanlar: **Entity**, **Data Access (DAL)**, **Business (BLL)**, **UI (MVC)**.
-- **Dinamik Yönetim Paneli**: 
-  - **Yazılar**, **Yorumlar**, **Kategoriler**, **Kullanıcı Profili** gibi modüllerin kolay yönetimi.
-- **Çok Katmanlı Yapı**: Sorumlulukların ayrımı sayesinde yüksek okunabilirlik ve bakım kolaylığı.
-- **Gelişmiş CRUD İşlemleri**: Veritabanı işlemlerini sorunsuz gerçekleştirmek için entegre sistem.
-- **Responsive Arayüz**: Modern ve kullanıcı dostu tasarım, tüm cihazlara uyumlu.
+- **N Katmanlı Mimari**
+- **Dinamik Yönetim Paneli**
 
 ---
 
@@ -33,36 +28,37 @@ Bu sistem, blog yönetimi süreçlerini kolaylaştırmak, kullanıcıların içe
 
 ---
 
-## 📂 Proje Yapısı
-
-- **Entities Layer**: Veritabanı tablolarını temsil eden sınıflar.  
-- **Data Access Layer (DAL)**: Veritabanı ile doğrudan iletişim sağlayan katman.  
-- **Business Layer (BLL)**: İş kurallarını ve mantığını barındıran katman.  
-- **UI Layer**: Kullanıcıya sunulan görsel arayüz.  
-
----
-
-## 🎯 Katmanlar Arası İletişim
-
-- **Entities → DAL**: Veritabanı işlemlerini gerçekleştirmek için veri modellerini taşır.  
-- **DAL → BLL**: Veritabanından alınan verilerin iş kurallarına uygun hale getirilmesini sağlar.  
-- **BLL → UI**: Kullanıcı arayüzüne hazır veri sağlar ve girdileri iş kurallarına uygun şekilde işler.  
-
----
 
 ## 📑 Proje Modülleri
 
 - **Yazı Yönetimi**: 
   - Yazı ekleme, güncelleme, silme ve listeleme işlemleri.  
 - **Yorum Yönetimi**: 
-  - Kullanıcı yorumlarının görüntülenmesi, düzenlenmesi ve silinmesi.  
+  - Kullanıcı yorumlarının görüntülenmesi.  
 - **Kategori Yönetimi**: 
-  - Kategorilerin oluşturulması ve yönetilmesi.  
+  - Kategori ekleme, güncelleme, silme ve listeleme işlemleri.  
 - **Kullanıcı Profili**: 
   - Kullanıcı bilgileri güncelleme, şifre değişimi.  
 - **Giriş ve Çıkış**: 
   - Kimlik doğrulama, session yönetimi ve güvenli çıkış işlemleri.  
 
----
 
 ## 📸 Ekran Görüntüleri
+
+## UI 
+![screenshot](https://github.com/user-attachments/assets/b7c08b46-b642-4821-84cd-005034e720a5)
+![Ramazan Akdil - Benim Bloğum](https://github.com/user-attachments/assets/292a5042-acb1-4ebb-b543-10cb4cab9b40)
+![Ekran görüntüsü 2024-12-27 231102](https://github.com/user-attachments/assets/566de94f-fb84-4232-8248-a6f57a718f88)
+
+## Login / Register
+![Ekran görüntüsü 2024-12-28 001818](https://github.com/user-attachments/assets/0136b67d-84d5-476f-bfe1-7176f3555032)
+![Ekran görüntüsü 2024-12-28 001829](https://github.com/user-attachments/assets/91179cf7-9261-4f5d-8427-5c8849eb20a1)
+
+## Yazar Paneli
+![Ekran görüntüsü 2024-12-28 001049](https://github.com/user-attachments/assets/8391e9c3-85fb-404b-b889-97f0edac0ceb)
+![Ekran görüntüsü 2024-12-27 230601](https://github.com/user-attachments/assets/bf080dcb-c849-4a3d-82c7-f5035c94f694)
+![Ekran görüntüsü 2024-12-27 230616](https://github.com/user-attachments/assets/38cb57cf-f722-4fbd-874b-e8b4cb6c6593)
+![Ekran görüntüsü 2024-12-27 230627](https://github.com/user-attachments/assets/043357ea-d34f-414c-9047-c694b13d64e0)
+
+
+
