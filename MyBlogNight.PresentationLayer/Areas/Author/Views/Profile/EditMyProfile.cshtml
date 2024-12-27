@@ -1,0 +1,48 @@
+﻿@model UserEditViewModel
+@{
+    Layout = "~/Areas/Author/Views/Shared/_AuthorLayout.cshtml";
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white text-center">
+                    <h3>Bilgilerinizi Güncelleyin</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="mb-3">
+                            <label for="Name" class="form-label">Adınız</label>
+                            <input type="text" id="Name" asp-for="Name" class="form-control" placeholder="Adınızı girin" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Surname" class="form-label">Soyadınız</label>
+                            <input type="text" id="Surname" asp-for="Surname" class="form-control" placeholder="Soyadınızı girin" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Username" class="form-label">Kullanıcı Adınız</label>
+                            <input type="text" id="Username" asp-for="Username" class="form-control" placeholder="Kullanıcı adınızı girin" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Email" class="form-label">Email Adresiniz</label>
+                            <input type="email" id="Email" asp-for="Email" class="form-control" placeholder="Email adresinizi girin" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Password" class="form-label">Şifreniz</label>
+                            <input type="password" id="Password" asp-for="Password" class="form-control" placeholder="Şifrenizi girin" />
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Bilgileri Güncelle</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

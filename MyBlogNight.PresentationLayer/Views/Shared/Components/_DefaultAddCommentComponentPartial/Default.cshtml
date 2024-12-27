@@ -1,0 +1,8 @@
+﻿@model Comment
+
+<h3>Yorum Yap</h3>
+<form action="/Default/AddComment" method="post">
+    <input type="hidden" asp-for="ArticleId" value="@ViewData["ArticleId"]">
+    <textarea asp-for="CommentDetail" rows="5" placeholder="Yorumunuz" required></textarea>
+    <button type="submit">Yorum Yap</button>
+</form>

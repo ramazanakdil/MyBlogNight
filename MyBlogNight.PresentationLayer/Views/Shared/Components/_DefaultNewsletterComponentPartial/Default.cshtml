@@ -1,0 +1,22 @@
+﻿@using System.Web
+@model Subscribe
+
+<div class="newsletter-widget text-center align-self-center">
+    <h3>Haber Bültenine Kayıt Ol!</h3>
+    <p>Siz de gelişmelerden hemen haberdar olmak için hemen haber bültenimize kayıt olun.</p>
+    <form class="form-inline" method="post" action="/Default/AddNewsletter">
+        <input type="text" asp-for="Mail" placeholder="Mail Adresiniz.." required class="form-control" />
+        <input type="submit" value="Abone Ol" class="btn btn-default btn-block" />
+    </form>
+</div>
+@if (TempData["NewsletterMessage"] != null)
+{
+    <script>
+        Swal.fire({
+            title: 'İşlem Tamamlandı!',
+            text: '@Html.Raw(HttpUtility.JavaScriptStringEncode(TempData["NewsletterMessage"]?.ToString()))',
+            icon: 'success',
+            confirmButtonText: 'Tamam'
+        });
+    </script>
+}

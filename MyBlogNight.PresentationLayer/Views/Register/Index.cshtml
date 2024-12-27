@@ -1,0 +1,94 @@
+﻿@model RegisterViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background: url('https://get.wallhere.com/photo/sunlight-simple-background-sky-blue-background-blue-gradient-texture-circle-atmosphere-lens-flare-light-cloud-line-darkness-screenshot-computer-wallpaper-atmosphere-of-earth-outer-space-astronomical-object-207370.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .register-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+
+            .register-container h2 {
+                text-align: center;
+                margin-bottom: 20px;
+                color: #007bff;
+                font-weight: bold;
+            }
+
+        .form-control {
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .register-container small {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #555;
+        }
+
+        .validation-summary {
+            margin-top: 15px;
+            color: #d9534f;
+            font-size: 0.9em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <form method="post">
+            <h2>Kayıt Ol</h2>
+            <label for="name">Adınız</label>
+            <input type="text" class="form-control" asp-for="Name" id="name" placeholder="Adınızı girin" />
+            <br />
+            <label for="surname">Soyadınız</label>
+            <input type="text" class="form-control" asp-for="Surname" id="surname" placeholder="Soyadınızı girin" />
+            <br />
+            <label for="email">Email Adresiniz</label>
+            <input type="email" class="form-control" asp-for="Email" id="email" placeholder="Email adresinizi girin" />
+            <br />
+            <label for="username">Kullanıcı Adınız</label>
+            <input type="text" class="form-control" asp-for="Username" id="username" placeholder="Kullanıcı adınızı girin" />
+            <br />
+            <label for="password">Şifreniz</label>
+            <input type="password" class="form-control" asp-for="Password" id="password" placeholder="Şifrenizi girin" />
+            <br />
+            <button class="btn btn-primary">Kayıt Ol</button>
+
+            <div class="validation-summary" asp-validation-summary="ModelOnly"></div>
+            <small>Zaten bir hesabınız var mı? <a href="/Login/Index">Giriş Yap</a></small>
+        </form>
+    </div>
+</body>
+</html>

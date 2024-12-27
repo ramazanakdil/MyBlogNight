@@ -1,0 +1,121 @@
+﻿@model List<MyBlogNight.EntityLayer.Concrete.Category>
+@{
+    ViewData["Title"] = "CategoryList";
+    Layout = "~/Areas/Author/Views/Shared/_AuthorLayout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kategori Yönetimi</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .table th, .table td {
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .btn {
+            width: 100px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+                border-color: #004085;
+            }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+
+        .btn-warning:hover {
+            background-color: #e0a800;
+            border-color: #d39e00;
+        }
+
+        .add-category {
+            text-align: right;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kategori Yönetimi</h1>
+        <table class="table table-hover table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th>#</th>
+                    <th>Kategori Adı</th>
+                    <th>Sil</th>
+                    <th>Güncelle</th>
+                    <th>Bloglar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.CategoryId</td>
+                        <td>@item.CategoryName</td>
+                        <td>
+                            <a href="/Author/Category/DeleteCategory/@item.CategoryId" class="btn btn-danger">
+                                Sil
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/Author/Category/UpdateCategory/@item.CategoryId" class="btn btn-success">
+                                Güncelle
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/Author/Category/Blogs/@item.CategoryId" class="btn btn-warning">
+                                Bloglar
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="add-category">
+            <a href="/Author/CreateCategory" class="btn btn-primary">Yeni Kategori Girişi</a>
+        </div>
+    </div>
+</body>
+</html>
+

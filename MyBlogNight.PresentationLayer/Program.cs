@@ -1,7 +1,26 @@
+using FluentValidation.AspNetCore;
+using Microsoft.Extensions.WebEncoders;
+using MyBlogNight.BusinessLayer.Abstract;
+using MyBlogNight.BusinessLayer.Concrete;
+using MyBlogNight.BusinessLayer.Container;
+using MyBlogNight.DataAccessLayer.Abstract;
+using MyBlogNight.DataAccessLayer.Context;
+using MyBlogNight.DataAccessLayer.EntityFramework;
+using MyBlogNight.EntityLayer.Concrete;
+using MyBlogNight.PresentationLayer.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+
+
+builder.Services.AddDbContext<BlogContext>();
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<BlogContext>().AddErrorDescriber<CustomIdentityErrorValidator>();
+
+
+builder.Services.ContainerDepencies();
+
+builder.Services.AddControllersWithViews().AddFluentValidation();
 
 var app = builder.Build();
 
@@ -17,11 +36,22 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+      name: "areas",
+      pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+    );
+});
+
+
 
 app.Run();

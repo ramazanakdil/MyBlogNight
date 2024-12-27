@@ -1,0 +1,107 @@
+﻿@using X.PagedList.Mvc.Core
+@model X.PagedList.IPagedList<MyBlogNight.EntityLayer.Concrete.Article>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<section id="cta" class="section">
+    @await Component.InvokeAsync("_DefaultBannerComponentPartial")
+</section>
+
+<section class="section lb">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                <div class="page-wrapper">
+                    <div class="blog-custom-build">
+
+                        @foreach (var item in Model)
+                        {
+                            <div class="blog-box wow fadeIn">
+
+                                <div class="post-media">
+                                    <a href="/Default/ArticleDetail/@item.ArticleId" title="">
+                                        <img src="@item.CoverImageUrl" alt="" class="img-fluid">
+                                        <div class="hovereffect">
+                                            <span></span>
+                                        </div>
+
+                                    </a>
+                                </div>
+
+                                <div class="blog-meta big-meta text-center">
+                                    <h4><a href="/Default/ArticleDetail/@item.ArticleId" title="">@item.Title</a></h4>
+                                    <p> @item.Detail.Substring(0, 200)...</p>
+                                    <small><a href="#" title="">@item.Category.CategoryName</a></small>
+                                    <small><a href="#" title="">@item.CreatedDate.ToString("dd.MM.yyyy")</a></small>
+                                    <small><a href="#" title="">@item.AppUser.Name @item.AppUser.Surname </a></small>
+                                    <small><a href="#" title=""><i class="fa fa-eye"></i>@item.ArticleViewCount</a></small>
+                                </div>
+                            </div>
+
+                            <hr class="invis">
+                        }
+
+                    </div>
+                </div>
+
+                <hr class="invis">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <nav aria-label="Page navigation">
+                            @Html.PagedListPager(
+                                     Model,
+                                     page => Url.Action("Index", new { page = page }),
+                                     new PagedListRenderOptions
+                            {
+                                LiElementClasses = new[] { "page-item" },
+                                PageClasses = new[] { "page-link" },
+                                UlElementClasses = new[] { "pagination", "justify-content-center" }
+                            }
+                                     )
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                <div class="sidebar">
+                    @await Component.InvokeAsync("_DefaultLast3ArticlesComponentPartial")
+                    @await Component.InvokeAsync("_DefaultSidebarCategoryComponentPartial")
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .pagination li {
+        display: inline-block;
+    }
+
+        .pagination li a, .pagination li span {
+            background-color: #ffc107;
+            color: #000;
+            border: none;
+            padding: 10px 15px;
+            margin: 2px;
+            text-decoration: none;
+        }
+
+            .pagination li a:hover {
+                background-color: #e0a800;
+            }
+
+    .pagination .active span {
+        background-color: #e0a800;
+        font-weight: bold;
+    }
+
+    .pagination .disabled span {
+        background-color: #ffc107;
+        color: #aaa;
+    }
+</style>

@@ -1,0 +1,28 @@
+﻿@model List<MyBlogNight.EntityLayer.Concrete.Article>
+
+@{
+    Layout = "~/Areas/Author/Views/Shared/_AuthorLayout.cshtml";
+}
+
+<br />
+<div class="container"> <h1 style="text-align:center; color:black">Yazılarım</h1> </div>
+<br />
+
+<table class="table table-striped" style="color:black">
+    <tr>
+        <th>Yazı Başlığı</th>
+        <th>Yayınlanma Tarihi</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Title</td>
+            <td>@item.CreatedDate</td>
+            <td><a href="/Author/Article/DeleteArticle/@item.ArticleId" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+</table>
+<a href="/Author/Article/CreateArticle" class="btn btn-primary">Yeni Yazı Ekle </a>
+
+

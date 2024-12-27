@@ -1,0 +1,12 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-12 align-self-center">
+            <h2>Yeni Nesil Blog</h2>
+            <p class="lead"> Teknoloji, Tiyatro, Film-Dizi, Sağlık, Eğitim, Kültür Sanat, Spor ve çok daha fazla konuda bilgi sahibi olacağınız yeni nesil blog sitesine hoş geldiniz.  </p>
+
+        </div>
+        <div class="col-lg-4 col-md-12">
+            @await Component.InvokeAsync("_DefaultNewsletterComponentPartial", new { model = new Subscribe() })
+        </div>
+    </div>
+</div>

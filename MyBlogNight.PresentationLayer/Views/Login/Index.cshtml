@@ -1,0 +1,79 @@
+﻿@model LoginViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background: url('https://get.wallhere.com/photo/sunlight-simple-background-sky-blue-background-blue-gradient-texture-circle-atmosphere-lens-flare-light-cloud-line-darkness-screenshot-computer-wallpaper-atmosphere-of-earth-outer-space-astronomical-object-207370.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+
+            .login-container .alert {
+                text-align: center;
+                font-size: 1.2em;
+                font-weight: bold;
+                color: #fff;
+                background-color: #007bff;
+                border: none;
+                margin-bottom: 20px;
+            }
+
+        .form-control {
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .login-container small {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <form method="post">
+            <div class="alert">Benim Bloğum Giriş Ekranı</div>
+            <label for="username">Kullanıcı Adınız</label>
+            <input type="text" class="form-control" asp-for="Username" id="username" placeholder="Kullanıcı adınızı girin" />
+            <br />
+            <label for="password">Şifreniz</label>
+            <input type="password" class="form-control" asp-for="Password" id="password" placeholder="Şifrenizi girin" />
+            <br />
+            <button class="btn btn-primary">Giriş Yap</button>
+            <small>Üye Değil Misiniz? <a href="/Register/Index">Hemen Üye Ol</a></small>
+        </form>
+    </div>
+</body>
+</html>
